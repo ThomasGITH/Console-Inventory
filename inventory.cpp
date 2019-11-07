@@ -26,14 +26,14 @@ void display(char (&inv)[Height][Width], const DynamicList<char>& items)//(T (&i
 	size_t index = 0;
 	for(size_t i = 0; i < Height; i++)
 	{
-		bool done;
 		for(size_t j = 0; j < Width; j++)
 		{
 			inv[i][j] = items.Get(index++);
-			if(index == items.Length()){done = 1; break;}
+			if(index == items.Length())
+			goto cont;
 		}
-		if(done)break;
 	}
+	cont:
 	
 	for(size_t i = 0; i < Height; i++)
 	{
